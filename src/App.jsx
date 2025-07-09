@@ -1,3 +1,9 @@
+import Header from "./components/Header/Header";
+
 export default function App() {
-  return <div>Welcome to Knowledge Cafe</div>;
+  return (
+    <main className="container mx-auto">
+      <Header />
+    </main>
+  );
 }
