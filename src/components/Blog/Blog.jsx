@@ -1,6 +1,6 @@
 import bookmark from "../../assets/bookmark.png";
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleAddToBookmark }) => {
   const {
     author,
     author_img,
@@ -30,7 +30,12 @@ const Blog = ({ blog }) => {
           <p className=" text-gray-500 font-medium">
             {reading_time} minutes read
           </p>
-          <img className="w-4" src={bookmark} alt="bookmark" />
+          <img
+            onClick={() => handleAddToBookmark(blog)}
+            className="w-4"
+            src={bookmark}
+            alt="bookmark"
+          />
         </div>
       </div>
       <h2 className="font-bold text-[40px]">{title}</h2>
@@ -39,7 +44,9 @@ const Blog = ({ blog }) => {
           <p key={i}>#{hashtag}</p>
         ))}
       </div>
-      <button className="text-purple-500 border-b-2 cursor-pointer mb-6">Mark as read</button>
+      <button className="text-purple-500 border-b-2 cursor-pointer mb-6">
+        Mark as read
+      </button>
     </div>
   );
 };
