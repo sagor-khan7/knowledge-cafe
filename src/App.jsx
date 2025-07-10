@@ -11,8 +11,14 @@ export default function App() {
     setBookmarks([...bookmarks, blog]);
   }
 
-  function handleMarkAsRead(time) {
+  function handleMarkAsRead(id, time) {
     setReadingTime(readingTime + time);
+
+    console.log("remove bookmark", id);
+    const remainingBookmarks = bookmarks.filter(
+      (bookmark) => bookmark.id !== id
+    );
+    setBookmarks(remainingBookmarks);
   }
 
   return (

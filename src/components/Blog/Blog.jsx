@@ -2,6 +2,7 @@ import bookmark from "../../assets/bookmark.png";
 
 const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
   const {
+    id,
     author,
     author_img,
     cover,
@@ -45,7 +46,7 @@ const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
         ))}
       </div>
       <button
-        onClick={() => handleMarkAsRead(reading_time)}
+        onClick={() => handleMarkAsRead(id, reading_time)}
         className="text-purple-500 border-b-2 cursor-pointer mb-6"
       >
         Mark as read
